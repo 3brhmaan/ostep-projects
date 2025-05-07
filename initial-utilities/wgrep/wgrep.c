@@ -30,16 +30,14 @@ void searchFileContentWithSearchTerm( char *searchTerm, char *fileName){
 void searchStandardInputContentWithSearchTerm( char *searchTerm)
 {
     char *line = NULL;    
-        size_t lineLength = 0;      
+    size_t lineLength = 0;      
 
-        if (getline(&line, &lineLength, stdin) != -1) {
-            while (getline(&line, &lineLength, stdin) != -1) {
-                if(strstr(line, searchTerm) != NULL)
-                {
-                    printf("%s", line); 
-                }
-            }
+    while (getline(&line, &lineLength, stdin) != -1) {
+        if(strstr(line, searchTerm) != NULL)
+        {
+            printf("%s", line); 
         }
+    }
 }
 
 
